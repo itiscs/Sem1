@@ -19,7 +19,9 @@ namespace Rational
                 this.chisl = c;
                 this.znam = z;
             }
-        }
+            else 
+                throw new DivideByZeroException("Делим на ноль!!!!!!!!!"); 
+            }
 
         public Rational(int c):this(c,1)
         {

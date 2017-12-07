@@ -12,8 +12,9 @@ namespace Rational
     {
         static void Main(string[] args)
         {
-            Rational r = new Rational(1,5);
-
+            Rational r;
+            r = new Rational(1,0);
+            
             r.Show();
 
             r.SetChisl(3);
@@ -21,7 +22,7 @@ namespace Rational
             r.Show();
 
             Rational r1 = new Rational(10,2);
-            Rational r2 = new Rational(1,3);
+            Rational r2 = new Rational(-1,3);
 
 
             //r1.Show();

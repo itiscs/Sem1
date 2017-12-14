@@ -12,6 +12,13 @@ namespace ConsGame
         {
             bool gameRunning = true;
             ConsoleKeyInfo userKey;
+            Console.CursorVisible = false;
+
+
+            Menu menu = new Menu();
+            menu.Show();
+
+
 
             int locationX = 0;
             int locationY = 0;
@@ -21,14 +28,12 @@ namespace ConsGame
 
             Console.BackgroundColor = ConsoleColor.Red;
             Console.ForegroundColor = ConsoleColor.Black;
-            Console.CursorVisible = false;
             Console.Clear();
+            Console.SetCursorPosition(locationX, locationY);
+            Console.Write("@");
 
-            
 
-
-
-            while(gameRunning)
+            while (gameRunning)
             {
 
                 userKey = Console.ReadKey(true);

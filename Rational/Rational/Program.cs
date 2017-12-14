@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace Rational
 {
-
-
+    
     class Program
     {
         static void Main(string[] args)
@@ -17,7 +16,7 @@ namespace Rational
             
             r.Show();
 
-            r.SetChisl(3);
+            r.Chisl = 3;
 
             r.Show();
 

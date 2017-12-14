@@ -12,12 +12,45 @@ namespace Rational
         private int chisl;
         private int znam;
 
+        public int Chisl
+        {
+            get
+            {
+                return chisl;
+            }
+            set
+            {
+                chisl = value;
+            }
+        }
+
+        public int Znam {
+            get
+            {
+                return znam;
+            }
+            set
+            {
+                if (value > 0)
+                    znam = value;
+                else
+                    throw new Exception("Знаменатель должен быть больше нуля");
+            }
+           }
+
+ 
+
+
+
+
+
+
         public Rational(int c, int z)
         {
             if (z != 0)
             {
-                this.chisl = c;
-                this.znam = z;
+                this.Chisl = c;
+                this.Znam = z;
             }
             else 
                 throw new DivideByZeroException("Делим на ноль!!!!!!!!!"); 
@@ -38,40 +71,40 @@ namespace Rational
 
         public void SetChisl(int c)
         {
-            this.chisl = c;
+            this.Chisl = c;
         }
 
         public int GetChisl()
         {
-            return chisl;
+            return Chisl;
         }
 
         public void Show()
         {
-            Console.WriteLine($"{chisl}/{znam}");
+            Console.WriteLine($"{Chisl}/{Znam}");
         }
 
         public override string ToString()
         {
-            if (znam == 1)
-                return $"{chisl}";
+            if (Znam == 1)
+                return $"{Chisl}";
 
-            return $"{chisl}/{znam}";
+            return $"{Chisl}/{Znam}";
             
         }
 
         public static Rational operator+(Rational a, Rational b)
         {
-            int c = a.chisl * b.znam + a.znam * b.chisl;
-            int z = a.znam * b.znam;
+            int c = a.Chisl * b.Znam + a.Znam * b.Chisl;
+            int z = a.Znam * b.Znam;
             Rational r = new Rational(c, z);
             return r;
         }
 
         public void Sum(Rational a, Rational b)
         {
-            chisl = a.chisl * b.znam + a.znam * b.chisl;
-            znam = a.znam * b.znam;
+            Chisl = a.Chisl * b.Znam + a.Znam * b.Chisl;
+            Znam = a.Znam * b.Znam;
         }
 
 
